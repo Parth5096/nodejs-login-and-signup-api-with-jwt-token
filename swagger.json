@@ -1,0 +1,2538 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "My User Project CRUD",
+      "description": "My User Project Application API",
+      "license": {
+        "name": "MIT",
+        "url": "https://opensource.org/licenses/MIT"
+      }
+    },
+    "host": "localhost:3000",
+    "basePath": "/",
+    "tags": [
+      {
+        "name": "User",
+        "description": "API for user in the system"
+      },
+      {
+        "name": "Address",
+        "description": "API for address in the system"
+      }
+    ],
+    "schemes": [
+      "http"
+    ],
+    "consumes": [
+      "application/json"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "paths": {
+      "/user/create": {
+        "post": {
+          "tags": [
+            "User"
+          ],
+          "description": "Create new user in system",
+          "parameters": [
+            {
+              "name": "user",
+              "in": "body",
+              "description": "User that we want to create",
+              "schema": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "New user is created",
+              "schema": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          }
+        } 
+      },
+      "/user/": {
+        "get": {
+            "tags": [
+              "User"
+            ],
+            "summary": "Get all user in system",
+            "responses": {
+              "200": {
+                "description": "OK",
+                "schema": {
+                  "$ref": "#/definitions/User"
+                }
+              }
+            }
+          }
+      },
+      "user/:id": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of user that we want to find",
+            "type": "integer"
+          }
+        ],
+        "get": {
+          "summary": "Get the detail of particular user",
+          "tags": [
+            "User"
+          ],
+          "responses": {
+            "200": {
+              "description": "User :",
+              "schema": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          }
+        }
+      },
+      "user/update/:id": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of user that we want to find",
+            "type": "integer"
+          }
+        ],
+        "put": {
+          "summary": "Update user with give ID",
+          "tags": [
+            "User"
+          ],
+          "parameters": [
+            {
+              "name": "user",
+              "in": "body",
+              "description": "User with new values of properties",
+              "schema": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "User is updated",
+              "schema": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          }
+        }
+      },
+      "user/delete/:id": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of user that we want to find",
+            "type": "integer"
+          }
+        ],
+        "delete": {
+          "summary": "Delete user with given ID",
+          "tags": [
+            "User"
+          ],
+          "responses": {
+            "200": {
+              "description": "User is deleted",
+              "schema": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          }
+        }
+      },
+      "/address/create": {
+        "post": {
+          "tags": [
+            "Address"
+          ],
+          "description": "Create new address in system",
+          "parameters": [
+            {
+              "name": "address",
+              "in": "body",
+              "description": "Address that we want to create",
+              "schema": {
+                "$ref": "#/definitions/Address"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "New address is created",
+              "schema": {
+                "$ref": "#/definitions/Address"
+              }
+            }
+          }
+        } 
+      },
+      "/address/": {
+        "get": {
+            "tags": [
+              "Address"
+            ],
+            "summary": "Get all address in system",
+            "responses": {
+              "200": {
+                "description": "OK",
+                "schema": {
+                  "$ref": "#/definitions/Address"
+                }
+              }
+            }
+          }
+      },
+      "address/:id": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of address that we want to find",
+            "type": "integer"
+          }
+        ],
+        "get": {
+          "summary": "Get the detail of particular address",
+          "tags": [
+            "Address"
+          ],
+          "responses": {
+            "200": {
+              "description": "Address :",
+              "schema": {
+                "$ref": "#/definitions/Address"
+              }
+            }
+          }
+        }
+      },
+      "address/update/:id": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of address that we want to find",
+            "type": "integer"
+          }
+        ],
+        "put": {
+          "summary": "Update address with give ID",
+          "tags": [
+            "Address"
+          ],
+          "parameters": [
+            {
+              "name": "address",
+              "in": "body",
+              "description": "Address with new values of properties",
+              "schema": {
+                "$ref": "#/definitions/Address"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Address is updated",
+              "schema": {
+                "$ref": "#/definitions/Address"
+              }
+            }
+          }
+        }
+      },
+      "address/delete/:id": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of address that we want to find",
+            "type": "integer"
+          }
+        ],
+        "delete": {
+          "summary": "Delete address with given ID",
+          "tags": [
+            "Address"
+          ],
+          "responses": {
+            "200": {
+              "description": "Address is deleted",
+              "schema": {
+                "$ref": "#/definitions/Address"
+              }
+            }
+          }
+        }
+      },
+      "/order/create": {
+        "post": {
+          "tags": [
+            "Order"
+          ],
+          "description": "Create new order in system",
+          "parameters": [
+            {
+              "name": "order",
+              "in": "body",
+              "description": "Order that we want to create",
+              "schema": {
+                "$ref": "#/definitions/Order"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "New order is created",
+              "schema": {
+                "$ref": "#/definitions/Order"
+              }
+            }
+          }
+        } 
+      },
+      "/order/": {
+        "get": {
+            "tags": [
+              "Order"
+            ],
+            "summary": "Get all models in system",
+            "responses": {
+              "200": {
+                "description": "OK",
+                "schema": {
+                  "$ref": "#/definitions/Models"
+                }
+              }
+            }
+          }
+      },
+      "order/:id": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of order that we want to find",
+            "type": "integer"
+          }
+        ],
+        "get": {
+          "summary": "Get the detail of particular order",
+          "tags": [
+            "Order"
+          ],
+          "responses": {
+            "200": {
+              "description": "Order :",
+              "schema": {
+                "$ref": "#/definitions/Order"
+              }
+            }
+          }
+        }
+      },
+      "order/update/:id": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of order that we want to find",
+            "type": "integer"
+          }
+        ],
+        "put": {
+          "summary": "Update order with give ID",
+          "tags": [
+            "Order"
+          ],
+          "parameters": [
+            {
+              "name": "order",
+              "in": "body",
+              "description": "Order with new values of properties",
+              "schema": {
+                "$ref": "#/definitions/updateModel"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Order is updated",
+              "schema": {
+                "$ref": "#/definitions/Order"
+              }
+            }
+          }
+        }
+      },
+      "order/delete/:id": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of order that we want to find",
+            "type": "integer"
+          }
+        ],
+        "delete": {
+          "summary": "Delete order with given ID",
+          "tags": [
+            "Order"
+          ],
+          "responses": {
+            "200": {
+              "description": "Order is deleted",
+              "schema": {
+                "$ref": "#/definitions/Order"
+              }
+            }
+          }
+        }
+      },
+      "/cart/create": {
+        "post": {
+          "tags": [
+            "Cart"
+          ],
+          "description": "Create new cart in system",
+          "parameters": [
+            {
+              "name": "cart",
+              "in": "body",
+              "description": "Cart that we want to create",
+              "schema": {
+                "$ref": "#/definitions/Cart"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "New cart is created",
+              "schema": {
+                "$ref": "#/definitions/Cart"
+              }
+            }
+          }
+        } 
+      },
+      "/cart/": {
+        "get": {
+            "tags": [
+              "Cart"
+            ],
+            "summary": "Get all models in system",
+            "responses": {
+              "200": {
+                "description": "OK",
+                "schema": {
+                  "$ref": "#/definitions/Models"
+                }
+              }
+            }
+          }
+      },
+      "cart/:id": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of cart that we want to find",
+            "type": "integer"
+          }
+        ],
+        "get": {
+          "summary": "Get the detail of particular cart",
+          "tags": [
+            "Cart"
+          ],
+          "responses": {
+            "200": {
+              "description": "Cart :",
+              "schema": {
+                "$ref": "#/definitions/Cart"
+              }
+            }
+          }
+        }
+      },
+      "cart/update/:id": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of cart that we want to find",
+            "type": "integer"
+          }
+        ],
+        "put": {
+          "summary": "Update cart with give ID",
+          "tags": [
+            "Cart"
+          ],
+          "parameters": [
+            {
+              "name": "cart",
+              "in": "body",
+              "description": "Cart with new values of properties",
+              "schema": {
+                "$ref": "#/definitions/updateModel"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Cart is updated",
+              "schema": {
+                "$ref": "#/definitions/Cart"
+              }
+            }
+          }
+        }
+      },
+      "cart/delete/:id": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of cart that we want to find",
+            "type": "integer"
+          }
+        ],
+        "delete": {
+          "summary": "Delete cart with given ID",
+          "tags": [
+            "Cart"
+          ],
+          "responses": {
+            "200": {
+              "description": "Cart is deleted",
+              "schema": {
+                "$ref": "#/definitions/Cart"
+              }
+            }
+          }
+        }
+      },
+      "/cartLineItems/create": {
+        "post": {
+          "tags": [
+            "CartLineItems"
+          ],
+          "description": "Create new cartLineItems in system",
+          "parameters": [
+            {
+              "name": "cartLineItems",
+              "in": "body",
+              "description": "CartLineItems that we want to create",
+              "schema": {
+                "$ref": "#/definitions/CartLineItems"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "New cartLineItems is created",
+              "schema": {
+                "$ref": "#/definitions/CartLineItems"
+              }
+            }
+          }
+        } 
+      },
+      "/cartLineItems/": {
+        "get": {
+            "tags": [
+              "CartLineItems"
+            ],
+            "summary": "Get all models in system",
+            "responses": {
+              "200": {
+                "description": "OK",
+                "schema": {
+                  "$ref": "#/definitions/Models"
+                }
+              }
+            }
+          }
+      },
+      "cartLineItems/:id": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of cartLineItems that we want to find",
+            "type": "integer"
+          }
+        ],
+        "get": {
+          "summary": "Get the detail of particular cartLineItems",
+          "tags": [
+            "CartLineItems"
+          ],
+          "responses": {
+            "200": {
+              "description": "CartLineItems :",
+              "schema": {
+                "$ref": "#/definitions/CartLineItems"
+              }
+            }
+          }
+        }
+      },
+      "cartLineItems/update/:id": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of cartLineItems that we want to find",
+            "type": "integer"
+          }
+        ],
+        "put": {
+          "summary": "Update cartLineItems with give ID",
+          "tags": [
+            "CartLineItems"
+          ],
+          "parameters": [
+            {
+              "name": "cartLineItems",
+              "in": "body",
+              "description": "CartLineItems with new values of properties",
+              "schema": {
+                "$ref": "#/definitions/updateModel"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "CartLineItems is updated",
+              "schema": {
+                "$ref": "#/definitions/CartLineItems"
+              }
+            }
+          }
+        }
+      },
+      "cartLineItems/delete/:id": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of cartLineItems that we want to find",
+            "type": "integer"
+          }
+        ],
+        "delete": {
+          "summary": "Delete cartLineItems with given ID",
+          "tags": [
+            "CartLineItems"
+          ],
+          "responses": {
+            "200": {
+              "description": "CartLineItems is deleted",
+              "schema": {
+                "$ref": "#/definitions/CartLineItems"
+              }
+            }
+          }
+        }
+      },
+      "/sku/create": {
+        "post": {
+          "tags": [
+            "SKU"
+          ],
+          "description": "Create new sku in system",
+          "parameters": [
+            {
+              "name": "sku",
+              "in": "body",
+              "description": "SKU that we want to create",
+              "schema": {
+                "$ref": "#/definitions/SKU"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "New sku is created",
+              "schema": {
+                "$ref": "#/definitions/SKU"
+              }
+            }
+          }
+        } 
+      },
+      "/sku/": {
+        "get": {
+            "tags": [
+              "SKU"
+            ],
+            "summary": "Get all models in system",
+            "responses": {
+              "200": {
+                "description": "OK",
+                "schema": {
+                  "$ref": "#/definitions/Models"
+                }
+              }
+            }
+          }
+      },
+      "sku/:id": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of sku that we want to find",
+            "type": "integer"
+          }
+        ],
+        "get": {
+          "summary": "Get the detail of particular sku",
+          "tags": [
+            "SKU"
+          ],
+          "responses": {
+            "200": {
+              "description": "SKU :",
+              "schema": {
+                "$ref": "#/definitions/SKU"
+              }
+            }
+          }
+        }
+      },
+      "sku/update/:id": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of sku that we want to find",
+            "type": "integer"
+          }
+        ],
+        "put": {
+          "summary": "Update sku with give ID",
+          "tags": [
+            "SKU"
+          ],
+          "parameters": [
+            {
+              "name": "sku",
+              "in": "body",
+              "description": "SKU with new values of properties",
+              "schema": {
+                "$ref": "#/definitions/updateModel"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "SKU is updated",
+              "schema": {
+                "$ref": "#/definitions/SKU"
+              }
+            }
+          }
+        }
+      },
+      "sku/delete/:id": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of sku that we want to find",
+            "type": "integer"
+          }
+        ],
+        "delete": {
+          "summary": "Delete sku with given ID",
+          "tags": [
+            "SKU"
+          ],
+          "responses": {
+            "200": {
+              "description": "SKU is deleted",
+              "schema": {
+                "$ref": "#/definitions/SKU"
+              }
+            }
+          }
+        }
+      },
+      "/serviceProvider/create": {
+        "post": {
+          "tags": [
+            "ServiceProvider"
+          ],
+          "description": "Create new serviceProvider in system",
+          "parameters": [
+            {
+              "name": "serviceProvider",
+              "in": "body",
+              "description": "ServiceProvider that we want to create",
+              "schema": {
+                "$ref": "#/definitions/ServiceProvider"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "New serviceProvider is created",
+              "schema": {
+                "$ref": "#/definitions/ServiceProvider"
+              }
+            }
+          }
+        } 
+      },
+      "/serviceProvider/": {
+        "get": {
+            "tags": [
+              "ServiceProvider"
+            ],
+            "summary": "Get all models in system",
+            "responses": {
+              "200": {
+                "description": "OK",
+                "schema": {
+                  "$ref": "#/definitions/Models"
+                }
+              }
+            }
+          }
+      },
+      "serviceProvider/:id": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of serviceProvider that we want to find",
+            "type": "integer"
+          }
+        ],
+        "get": {
+          "summary": "Get the detail of particular serviceProvider",
+          "tags": [
+            "ServiceProvider"
+          ],
+          "responses": {
+            "200": {
+              "description": "ServiceProvider :",
+              "schema": {
+                "$ref": "#/definitions/ServiceProvider"
+              }
+            }
+          }
+        }
+      },
+      "serviceProvider/update/:id": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of serviceProvider that we want to find",
+            "type": "integer"
+          }
+        ],
+        "put": {
+          "summary": "Update serviceProvider with give ID",
+          "tags": [
+            "ServiceProvider"
+          ],
+          "parameters": [
+            {
+              "name": "serviceProvider",
+              "in": "body",
+              "description": "ServiceProvider with new values of properties",
+              "schema": {
+                "$ref": "#/definitions/updateModel"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "ServiceProvider is updated",
+              "schema": {
+                "$ref": "#/definitions/ServiceProvider"
+              }
+            }
+          }
+        }
+      },
+      "serviceProvider/delete/:id": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of serviceProvider that we want to find",
+            "type": "integer"
+          }
+        ],
+        "delete": {
+          "summary": "Delete serviceProvider with given ID",
+          "tags": [
+            "ServiceProvider"
+          ],
+          "responses": {
+            "200": {
+              "description": "ServiceProvider is deleted",
+              "schema": {
+                "$ref": "#/definitions/ServiceProvider"
+              }
+            }
+          }
+        }
+      },
+      "/variants/create": {
+        "post": {
+          "tags": [
+            "Variants"
+          ],
+          "description": "Create new variants in system",
+          "parameters": [
+            {
+              "name": "variants",
+              "in": "body",
+              "description": "Variants that we want to create",
+              "schema": {
+                "$ref": "#/definitions/Variants"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "New variants is created",
+              "schema": {
+                "$ref": "#/definitions/Variants"
+              }
+            }
+          }
+        } 
+      },
+      "/variants/": {
+        "get": {
+            "tags": [
+              "Variants"
+            ],
+            "summary": "Get all models in system",
+            "responses": {
+              "200": {
+                "description": "OK",
+                "schema": {
+                  "$ref": "#/definitions/Models"
+                }
+              }
+            }
+          }
+      },
+      "variants/:id": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of variants that we want to find",
+            "type": "integer"
+          }
+        ],
+        "get": {
+          "summary": "Get the detail of particular variants",
+          "tags": [
+            "Variants"
+          ],
+          "responses": {
+            "200": {
+              "description": "Variants :",
+              "schema": {
+                "$ref": "#/definitions/Variants"
+              }
+            }
+          }
+        }
+      },
+      "variants/update/:id": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of variants that we want to find",
+            "type": "integer"
+          }
+        ],
+        "put": {
+          "summary": "Update variants with give ID",
+          "tags": [
+            "Variants"
+          ],
+          "parameters": [
+            {
+              "name": "variants",
+              "in": "body",
+              "description": "Variants with new values of properties",
+              "schema": {
+                "$ref": "#/definitions/updateModel"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Variants is updated",
+              "schema": {
+                "$ref": "#/definitions/Variants"
+              }
+            }
+          }
+        }
+      },
+      "variants/delete/:id": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of variants that we want to find",
+            "type": "integer"
+          }
+        ],
+        "delete": {
+          "summary": "Delete variants with given ID",
+          "tags": [
+            "Variants"
+          ],
+          "responses": {
+            "200": {
+              "description": "Variants is deleted",
+              "schema": {
+                "$ref": "#/definitions/Variants"
+              }
+            }
+          }
+        }
+      },
+      "/category/create": {
+        "post": {
+          "tags": [
+            "Category"
+          ],
+          "description": "Create new category in system",
+          "parameters": [
+            {
+              "name": "category",
+              "in": "body",
+              "description": "Category that we want to create",
+              "schema": {
+                "$ref": "#/definitions/Category"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "New category is created",
+              "schema": {
+                "$ref": "#/definitions/Category"
+              }
+            }
+          }
+        } 
+      },
+      "/category/": {
+        "get": {
+            "tags": [
+              "Category"
+            ],
+            "summary": "Get all models in system",
+            "responses": {
+              "200": {
+                "description": "OK",
+                "schema": {
+                  "$ref": "#/definitions/Models"
+                }
+              }
+            }
+          }
+      },
+      "category/:id": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of category that we want to find",
+            "type": "integer"
+          }
+        ],
+        "get": {
+          "summary": "Get the detail of particular category",
+          "tags": [
+            "Category"
+          ],
+          "responses": {
+            "200": {
+              "description": "Category :",
+              "schema": {
+                "$ref": "#/definitions/Category"
+              }
+            }
+          }
+        }
+      },
+      "category/update/:id": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of category that we want to find",
+            "type": "integer"
+          }
+        ],
+        "put": {
+          "summary": "Update category with give ID",
+          "tags": [
+            "Category"
+          ],
+          "parameters": [
+            {
+              "name": "category",
+              "in": "body",
+              "description": "Category with new values of properties",
+              "schema": {
+                "$ref": "#/definitions/updateModel"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Category is updated",
+              "schema": {
+                "$ref": "#/definitions/Category"
+              }
+            }
+          }
+        }
+      },
+      "category/delete/:id": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of category that we want to find",
+            "type": "integer"
+          }
+        ],
+        "delete": {
+          "summary": "Delete category with given ID",
+          "tags": [
+            "Category"
+          ],
+          "responses": {
+            "200": {
+              "description": "Category is deleted",
+              "schema": {
+                "$ref": "#/definitions/Category"
+              }
+            }
+          }
+        }
+      },
+      "/inventory/create": {
+        "post": {
+          "tags": [
+            "Inventory"
+          ],
+          "description": "Create new inventory in system",
+          "parameters": [
+            {
+              "name": "inventory",
+              "in": "body",
+              "description": "Inventory that we want to create",
+              "schema": {
+                "$ref": "#/definitions/Inventory"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "New inventory is created",
+              "schema": {
+                "$ref": "#/definitions/Inventory"
+              }
+            }
+          }
+        } 
+      },
+      "/inventory/": {
+        "get": {
+            "tags": [
+              "Inventory"
+            ],
+            "summary": "Get all models in system",
+            "responses": {
+              "200": {
+                "description": "OK",
+                "schema": {
+                  "$ref": "#/definitions/Models"
+                }
+              }
+            }
+          }
+      },
+      "inventory/:id": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of inventory that we want to find",
+            "type": "integer"
+          }
+        ],
+        "get": {
+          "summary": "Get the detail of particular inventory",
+          "tags": [
+            "Inventory"
+          ],
+          "responses": {
+            "200": {
+              "description": "Inventory :",
+              "schema": {
+                "$ref": "#/definitions/Inventory"
+              }
+            }
+          }
+        }
+      },
+      "inventory/update/:id": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of inventory that we want to find",
+            "type": "integer"
+          }
+        ],
+        "put": {
+          "summary": "Update inventory with give ID",
+          "tags": [
+            "Inventory"
+          ],
+          "parameters": [
+            {
+              "name": "inventory",
+              "in": "body",
+              "description": "Inventory with new values of properties",
+              "schema": {
+                "$ref": "#/definitions/updateModel"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Inventory is updated",
+              "schema": {
+                "$ref": "#/definitions/Inventory"
+              }
+            }
+          }
+        }
+      },
+      "inventory/delete/:id": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of inventory that we want to find",
+            "type": "integer"
+          }
+        ],
+        "delete": {
+          "summary": "Delete inventory with given ID",
+          "tags": [
+            "Inventory"
+          ],
+          "responses": {
+            "200": {
+              "description": "Inventory is deleted",
+              "schema": {
+                "$ref": "#/definitions/Inventory"
+              }
+            }
+          }
+        }
+      },
+      "/admin/create": {
+        "post": {
+          "tags": [
+            "Admin"
+          ],
+          "description": "Create new admin in system",
+          "parameters": [
+            {
+              "name": "admin",
+              "in": "body",
+              "description": "Admin that we want to create",
+              "schema": {
+                "$ref": "#/definitions/Admin"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "New admin is created",
+              "schema": {
+                "$ref": "#/definitions/Admin"
+              }
+            }
+          }
+        } 
+      },
+      "/admin/": {
+        "get": {
+            "tags": [
+              "Admin"
+            ],
+            "summary": "Get all models in system",
+            "responses": {
+              "200": {
+                "description": "OK",
+                "schema": {
+                  "$ref": "#/definitions/Models"
+                }
+              }
+            }
+          }
+      },
+      "admin/:id": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of admin that we want to find",
+            "type": "integer"
+          }
+        ],
+        "get": {
+          "summary": "Get the detail of particular admin",
+          "tags": [
+            "Admin"
+          ],
+          "responses": {
+            "200": {
+              "description": "Admin :",
+              "schema": {
+                "$ref": "#/definitions/Admin"
+              }
+            }
+          }
+        }
+      },
+      "admin/update/:id": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of admin that we want to find",
+            "type": "integer"
+          }
+        ],
+        "put": {
+          "summary": "Update admin with give ID",
+          "tags": [
+            "Admin"
+          ],
+          "parameters": [
+            {
+              "name": "admin",
+              "in": "body",
+              "description": "Admin with new values of properties",
+              "schema": {
+                "$ref": "#/definitions/updateModel"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Admin is updated",
+              "schema": {
+                "$ref": "#/definitions/Admin"
+              }
+            }
+          }
+        }
+      },
+      "admin/delete/:id": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of admin that we want to find",
+            "type": "integer"
+          }
+        ],
+        "delete": {
+          "summary": "Delete admin with given ID",
+          "tags": [
+            "Admin"
+          ],
+          "responses": {
+            "200": {
+              "description": "Admin is deleted",
+              "schema": {
+                "$ref": "#/definitions/Admin"
+              }
+            }
+          }
+        }
+      },
+      "/partner/create": {
+        "post": {
+          "tags": [
+            "Partner"
+          ],
+          "description": "Create new partner in system",
+          "parameters": [
+            {
+              "name": "partner",
+              "in": "body",
+              "description": "Partner that we want to create",
+              "schema": {
+                "$ref": "#/definitions/Partner"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "New partner is created",
+              "schema": {
+                "$ref": "#/definitions/Partner"
+              }
+            }
+          }
+        } 
+      },
+      "/partner/": {
+        "get": {
+            "tags": [
+              "Partner"
+            ],
+            "summary": "Get all models in system",
+            "responses": {
+              "200": {
+                "description": "OK",
+                "schema": {
+                  "$ref": "#/definitions/Models"
+                }
+              }
+            }
+          }
+      },
+      "partner/:id": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of partner that we want to find",
+            "type": "integer"
+          }
+        ],
+        "get": {
+          "summary": "Get the detail of particular partner",
+          "tags": [
+            "Partner"
+          ],
+          "responses": {
+            "200": {
+              "description": "Partner :",
+              "schema": {
+                "$ref": "#/definitions/Partner"
+              }
+            }
+          }
+        }
+      },
+      "partner/update/:id": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of partner that we want to find",
+            "type": "integer"
+          }
+        ],
+        "put": {
+          "summary": "Update partner with give ID",
+          "tags": [
+            "Partner"
+          ],
+          "parameters": [
+            {
+              "name": "partner",
+              "in": "body",
+              "description": "Partner with new values of properties",
+              "schema": {
+                "$ref": "#/definitions/updateModel"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Partner is updated",
+              "schema": {
+                "$ref": "#/definitions/Partner"
+              }
+            }
+          }
+        }
+      },
+      "partner/delete/:id": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of partner that we want to find",
+            "type": "integer"
+          }
+        ],
+        "delete": {
+          "summary": "Delete partner with given ID",
+          "tags": [
+            "Partner"
+          ],
+          "responses": {
+            "200": {
+              "description": "Partner is deleted",
+              "schema": {
+                "$ref": "#/definitions/Partner"
+              }
+            }
+          }
+        }
+      },
+      "/manufacturer/create": {
+        "post": {
+          "tags": [
+            "Manufacturer"
+          ],
+          "description": "Create new manufacturer in system",
+          "parameters": [
+            {
+              "name": "manufacturer",
+              "in": "body",
+              "description": "Manufacturer that we want to create",
+              "schema": {
+                "$ref": "#/definitions/Manufacturer"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "New manufacturer is created",
+              "schema": {
+                "$ref": "#/definitions/Manufacturer"
+              }
+            }
+          }
+        } 
+      },
+      "/manufacturer/": {
+        "get": {
+            "tags": [
+              "Manufacturer"
+            ],
+            "summary": "Get all models in system",
+            "responses": {
+              "200": {
+                "description": "OK",
+                "schema": {
+                  "$ref": "#/definitions/Models"
+                }
+              }
+            }
+          }
+      },
+      "manufacturer/:id": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of manufacturer that we want to find",
+            "type": "integer"
+          }
+        ],
+        "get": {
+          "summary": "Get the detail of particular manufacturer",
+          "tags": [
+            "Manufacturer"
+          ],
+          "responses": {
+            "200": {
+              "description": "Manufacturer :",
+              "schema": {
+                "$ref": "#/definitions/Manufacturer"
+              }
+            }
+          }
+        }
+      },
+      "manufacturer/update/:id": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of manufacturer that we want to find",
+            "type": "integer"
+          }
+        ],
+        "put": {
+          "summary": "Update manufacturer with give ID",
+          "tags": [
+            "Manufacturer"
+          ],
+          "parameters": [
+            {
+              "name": "manufacturer",
+              "in": "body",
+              "description": "Manufacturer with new values of properties",
+              "schema": {
+                "$ref": "#/definitions/updateModel"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Manufacturer is updated",
+              "schema": {
+                "$ref": "#/definitions/Manufacturer"
+              }
+            }
+          }
+        }
+      },
+      "manufacturer/delete/:id": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of manufacturer that we want to find",
+            "type": "integer"
+          }
+        ],
+        "delete": {
+          "summary": "Delete manufacturer with given ID",
+          "tags": [
+            "Manufacturer"
+          ],
+          "responses": {
+            "200": {
+              "description": "Manufacturer is deleted",
+              "schema": {
+                "$ref": "#/definitions/Manufacturer"
+              }
+            }
+          }
+        }
+      },
+      "/retailer/create": {
+        "post": {
+          "tags": [
+            "Retailer"
+          ],
+          "description": "Create new retailer in system",
+          "parameters": [
+            {
+              "name": "retailer",
+              "in": "body",
+              "description": "Retailer that we want to create",
+              "schema": {
+                "$ref": "#/definitions/Retailer"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "New retailer is created",
+              "schema": {
+                "$ref": "#/definitions/Retailer"
+              }
+            }
+          }
+        } 
+      },
+      "/retailer/": {
+        "get": {
+            "tags": [
+              "Retailer"
+            ],
+            "summary": "Get all models in system",
+            "responses": {
+              "200": {
+                "description": "OK",
+                "schema": {
+                  "$ref": "#/definitions/Models"
+                }
+              }
+            }
+          }
+      },
+      "retailer/:id": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of retailer that we want to find",
+            "type": "integer"
+          }
+        ],
+        "get": {
+          "summary": "Get the detail of particular retailer",
+          "tags": [
+            "Retailer"
+          ],
+          "responses": {
+            "200": {
+              "description": "Retailer :",
+              "schema": {
+                "$ref": "#/definitions/Retailer"
+              }
+            }
+          }
+        }
+      },
+      "retailer/update/:id": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of retailer that we want to find",
+            "type": "integer"
+          }
+        ],
+        "put": {
+          "summary": "Update retailer with give ID",
+          "tags": [
+            "Retailer"
+          ],
+          "parameters": [
+            {
+              "name": "retailer",
+              "in": "body",
+              "description": "Retailer with new values of properties",
+              "schema": {
+                "$ref": "#/definitions/updateModel"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Retailer is updated",
+              "schema": {
+                "$ref": "#/definitions/Retailer"
+              }
+            }
+          }
+        }
+      },
+      "retailer/delete/:id": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of retailer that we want to find",
+            "type": "integer"
+          }
+        ],
+        "delete": {
+          "summary": "Delete retailer with given ID",
+          "tags": [
+            "Retailer"
+          ],
+          "responses": {
+            "200": {
+              "description": "Retailer is deleted",
+              "schema": {
+                "$ref": "#/definitions/Retailer"
+              }
+            }
+          }
+        }
+      },
+      "/distributor/create": {
+        "post": {
+          "tags": [
+            "Distributor"
+          ],
+          "description": "Create new distributor in system",
+          "parameters": [
+            {
+              "name": "distributor",
+              "in": "body",
+              "description": "Distributor that we want to create",
+              "schema": {
+                "$ref": "#/definitions/Distributor"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "New distributor is created",
+              "schema": {
+                "$ref": "#/definitions/Distributor"
+              }
+            }
+          }
+        } 
+      },
+      "/distributor/": {
+        "get": {
+            "tags": [
+              "Distributor"
+            ],
+            "summary": "Get all models in system",
+            "responses": {
+              "200": {
+                "description": "OK",
+                "schema": {
+                  "$ref": "#/definitions/Models"
+                }
+              }
+            }
+          }
+      },
+      "distributor/:id": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of distributor that we want to find",
+            "type": "integer"
+          }
+        ],
+        "get": {
+          "summary": "Get the detail of particular distributor",
+          "tags": [
+            "Distributor"
+          ],
+          "responses": {
+            "200": {
+              "description": "Distributor :",
+              "schema": {
+                "$ref": "#/definitions/Distributor"
+              }
+            }
+          }
+        }
+      },
+      "distributor/update/:id": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of distributor that we want to find",
+            "type": "integer"
+          }
+        ],
+        "put": {
+          "summary": "Update distributor with give ID",
+          "tags": [
+            "Distributor"
+          ],
+          "parameters": [
+            {
+              "name": "distributor",
+              "in": "body",
+              "description": "Distributor with new values of properties",
+              "schema": {
+                "$ref": "#/definitions/updateModel"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Distributor is updated",
+              "schema": {
+                "$ref": "#/definitions/Distributor"
+              }
+            }
+          }
+        }
+      },
+      "distributor/delete/:id": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of distributor that we want to find",
+            "type": "integer"
+          }
+        ],
+        "delete": {
+          "summary": "Delete distributor with given ID",
+          "tags": [
+            "Distributor"
+          ],
+          "responses": {
+            "200": {
+              "description": "Distributor is deleted",
+              "schema": {
+                "$ref": "#/definitions/Distributor"
+              }
+            }
+          }
+        }
+      },
+      "/plans/create": {
+        "post": {
+          "tags": [
+            "Plans"
+          ],
+          "description": "Create new plans in system",
+          "parameters": [
+            {
+              "name": "plans",
+              "in": "body",
+              "description": "Plans that we want to create",
+              "schema": {
+                "$ref": "#/definitions/Plans"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "New plans is created",
+              "schema": {
+                "$ref": "#/definitions/Plans"
+              }
+            }
+          }
+        } 
+      },
+      "/plans/": {
+        "get": {
+            "tags": [
+              "Plans"
+            ],
+            "summary": "Get all models in system",
+            "responses": {
+              "200": {
+                "description": "OK",
+                "schema": {
+                  "$ref": "#/definitions/Models"
+                }
+              }
+            }
+          }
+      },
+      "plans/:id": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of plans that we want to find",
+            "type": "integer"
+          }
+        ],
+        "get": {
+          "summary": "Get the detail of particular plans",
+          "tags": [
+            "Plans"
+          ],
+          "responses": {
+            "200": {
+              "description": "Plans :",
+              "schema": {
+                "$ref": "#/definitions/Plans"
+              }
+            }
+          }
+        }
+      },
+      "plans/update/:id": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of plans that we want to find",
+            "type": "integer"
+          }
+        ],
+        "put": {
+          "summary": "Update plans with give ID",
+          "tags": [
+            "Plans"
+          ],
+          "parameters": [
+            {
+              "name": "plans",
+              "in": "body",
+              "description": "Plans with new values of properties",
+              "schema": {
+                "$ref": "#/definitions/updateModel"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Plans is updated",
+              "schema": {
+                "$ref": "#/definitions/Plans"
+              }
+            }
+          }
+        }
+      },
+      "plans/delete/:id": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of plans that we want to find",
+            "type": "integer"
+          }
+        ],
+        "delete": {
+          "summary": "Delete plans with given ID",
+          "tags": [
+            "Plans"
+          ],
+          "responses": {
+            "200": {
+              "description": "Plans is deleted",
+              "schema": {
+                "$ref": "#/definitions/Plans"
+              }
+            }
+          }
+        }
+      }
+    },
+    "definitions": {
+      "User": {
+        "required": [
+          "_id"
+        ],
+        "properties": {
+          "_id": {
+            "type": "String",
+            "uniqueItems": true
+          },
+          "firstname": {
+            "type": "String"
+          },
+          "lastname": {
+            "type": "String"
+          },
+          "email string": {
+            "type": "String"
+          },
+          "mobile num": {
+            "type": "String"
+          },
+          "addresses": {
+            "type": "array",
+            "address_id": {
+                "type": "String"      
+            } 
+          },
+          "block string": {
+            "type": "String"
+          },
+           "distinct string": {
+            "type": "String"
+          },
+          "state string": {
+            "type": "String"
+          },
+          "aadhar_card file": {
+            "type": "String"
+          },
+          "pan_card file": {
+            "type": "String"
+          },
+          "lan": {
+            "type": "float"
+          },
+          "long": {
+            "type": "float"
+          },
+          "role": {
+            "type": "String"
+          }
+        }
+      },
+      "Address": {
+        "required": [
+          "_id"
+        ],
+        "properties": {
+          "_id": {
+            "type": "String",
+            "uniqueItems": true
+          },
+          "street1": {
+            "type": "String"
+          },
+          "street2": {
+            "type": "String"
+          },
+          "landmark": {
+            "type": "String"
+          },
+          "pinCode": {
+            "type": "String"
+          },
+          "block": {
+            "type": "String"
+          },
+           "city": {
+            "type": "String"
+          },
+          "state": {
+            "type": "String"
+          }
+        }
+      },
+      "Order": {
+        "required": [
+          "_id"
+        ],
+        "properties": {
+          "_id": {
+            "type": "String",
+            "uniqueItems": true
+          },
+          "createdDate": {
+            "type": "String"
+          },
+          "userId": {
+            "type": "String"
+          },
+          "totals": {
+            "type": "String"
+          },
+          "billinginfo": {
+            "type": "String"
+          },
+          "shippingInfo": {
+            "type": "String"
+          },
+           "paymentStatus": {
+            "type": "String"
+          },
+          "fulfilmentStatus": {
+            "type": "String"
+          },
+          "cartId": {
+            "type": "String"
+          },
+          "refunds": {
+            "type": "String"
+          }
+        }
+      },
+      "Cart": {
+        "required": [
+          "_id"
+        ],
+        "properties": {
+          "_id": {
+            "type": "String",
+            "uniqueItems": true
+          },
+          "status": {
+            "type": "string"
+          },
+          "billingAddress": {
+            "type": "string"
+          },
+          "appliedCoupon": {
+            "type": "string"
+          },
+          "total": {
+            "type": "string"
+          },
+          "shippingInfo": {
+            "type": "string" 
+          },
+          "lineItems": {
+            "type": "string"
+          }
+        }
+      },
+      "CartLineItems": {
+        "required": [
+          "_id"
+        ],
+        "properties": {
+          "_id": {
+            "type": "String",
+            "uniqueItems": true
+          },
+          "quantity": {
+            "type": "string"
+          },
+          "skuId": {
+            "type": "string"
+          },
+          "priceData": {
+            "type": "string"
+          },
+          "weight": {
+            "type": "string"
+          },
+          "options": {
+            "type": "string"
+          },
+           "lineItemType": {
+            "type": "string"
+          }
+        }
+      },
+      "SKU": {
+        "required": [
+          "_id"
+        ],
+        "properties": {
+          "_id": {
+            "type": "String",
+            "uniqueItems": true
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "weight": {
+            "type": "string"
+          },
+          "categoryIds": {
+            "type": "string"
+          },
+          "variants": {
+            "type": "string"
+          },
+           "options": {
+            "type": "string"
+          },
+          "pageURL": {
+            "type": "string"
+          },
+          "discount": {
+            "type": "string"
+          }
+        }
+      },
+      "ServiceProvider": {
+        "required": [
+          "_id"
+        ],
+        "properties": {
+          "_id": {
+            "type": "String",
+            "uniqueItems": true
+          },
+          "serviceType": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string"
+          }
+        }
+      },
+      "Variants": {
+        "required": [
+          "_id"
+        ],
+        "properties": {
+          "_id": {
+            "type": "String",
+            "uniqueItems": true
+          },
+          "skuId": {
+            "type": "string"
+          },
+          "variantName": {
+            "type": "string"
+          },
+          "skuName": {
+            "type": "string"
+          },
+          "categoryIds": {
+            "type": "string"
+          },
+          "choices": {
+            "type": "string"
+          }
+        }
+      },
+      "Category": {
+        "required": [
+          "_id"
+        ],
+        "properties": {
+          "_id": {
+            "type": "String",
+            "uniqueItems": true
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      },
+      "Inventory": {
+        "required": [
+          "_id"
+        ],
+        "properties": {
+          "_id": {
+            "type": "String",
+            "uniqueItems": true
+          },
+          "skuId": {
+            "type": "string"
+          },
+          "createdBy": {
+            "type": "string"
+          },
+          "updatedBy": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "string"
+          },
+          "shippingInfo": {
+            "type": "string"
+          }
+        }
+      },
+      "Admin": {
+        "required": [
+          "_id"
+        ],
+        "properties": {
+          "_id": {
+            "type": "String",
+            "uniqueItems": true
+          },
+          "acessLevel": {
+            "type": "string"
+          }
+        }
+      },
+      "Partner": {
+        "required": [
+          "_id"
+        ],
+        "properties": {
+          "_id": {
+            "type": "String",
+            "uniqueItems": true
+          },
+          "UserId": {
+            "type": "string"
+          },
+          "referralCode": {
+            "type": "string"
+          },
+          "planId": {
+            "type": "string"
+          }
+        }
+      },
+      "Manufacturer": {
+        "required": [
+          "_id"
+        ],
+        "properties": {
+          "_id": {
+            "type": "String",
+            "uniqueItems": true
+          },
+          "userId": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "details": {
+            "type": "string"
+          }
+        }
+      },
+      "Retailer": {
+        "required": [
+          "_id"
+        ],
+        "properties": {
+          "_id": {
+            "type": "String",
+            "uniqueItems": true
+          },
+          "partnerId": {
+            "type": "string"
+          },
+          "distributorId": {
+            "type": "string"
+          }
+        }
+      },
+      "Distributor": {
+        "required": [
+          "_id"
+        ],
+        "properties": {
+          "_id": {
+            "type": "String",
+            "uniqueItems": true
+          },
+          "partnerId": {
+            "type": "string"
+          },
+          "retailers": {
+            "type": "string"
+          }
+        }
+      },
+      "Plans": {
+        "required": [
+          "_id"
+        ],
+        "properties": {
+          "_id": {
+            "type": "String",
+            "uniqueItems": true
+          },
+          "name": {
+            "type": "string"
+          },
+          "price": {
+            "type": "string"
+          },
+          "duration": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "discount": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+
+  
